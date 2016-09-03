@@ -1,0 +1,28 @@
+{
+  "name": "elec-pi",
+  "version": "0.0.1",
+  "description": "Home application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmccartney/elec-pi"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial"
+  ],
+  "author": "Nathan McCartney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nmccartney/elec-pi/issues"
+  },
+  "homepage": "https://github.com/nmccartney/elec-pi",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.5"
+  }
+}
