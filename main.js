@@ -2,6 +2,7 @@
 /* global process */
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var client = require('electron-connect').client;
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -48,6 +49,8 @@ app.on('ready', function() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow(browserWindowOptions);
+
+  client.create(mainWindow);
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/index.html');

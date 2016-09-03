@@ -2,6 +2,8 @@
 
 var gulp = require('gulp');
 
+var electron = require('electron-connect').server.create();
+
 var scss = require('gulp-scss');
 var jade = require('gulp-jade');
 
@@ -15,6 +17,10 @@ var file = require('file');
 var fs = require('fs');
 
 gulp.task("default",function(cb){
+
+  // Start browser process
+   electron.start();
+
     run(
          // "browsersync",
          "watch",
@@ -25,8 +31,13 @@ gulp.task("default",function(cb){
 
 // gulp watch:all
 gulp.task('watch',function(){
-    gulp.watch([ './scss/**/*.scss'], ['scss']  );
-    gulp.watch('./jade/**/*.jade',['jade']);
+  gulp. watch([ './scss/**/*.scss'], ['scss']  );
+  gulp.watch('./jade/**/*.jade',['jade']);
+
+  // Restart browser process
+  gulp.watch('main.js', electron.restart);
+  // Reload renderer process
+  gulp.watch(['index.html'], electron.reload);
 });
 
 /**

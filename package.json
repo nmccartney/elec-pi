@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nmccartney/elec-pi",
   "devDependencies": {
+    "electron-connect": "^0.5.0",
     "electron-prebuilt": "^0.36.5",
     "gulp": "^3.9.1"
   }
