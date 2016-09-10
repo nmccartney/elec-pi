@@ -50,7 +50,10 @@ app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow(browserWindowOptions);
 
-  client.create(mainWindow);
+  // add window to electron-connect client if gulp task
+  if(process.argv[1]=='-r process'){
+    client.create(mainWindow);
+  }
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
