@@ -10,7 +10,8 @@
    */
   angular
     .module('dashboard', [
-      'ui.router'
+      'ui.router',
+      'voice'
     ]);
 
   angular

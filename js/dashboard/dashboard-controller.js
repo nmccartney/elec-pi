@@ -12,9 +12,14 @@
     .module('dashboard')
     .controller('DashboardCtrl', HomeCtrl);
 
-  function HomeCtrl() {
+  function HomeCtrl(VoiceCommands) {
     var vm = this;
     vm.ctrlName = 'DashboardCtrl';
+
+    VoiceCommands.init().then(()=>{
+    	// VoiceCommands.currentTime();
+    	VoiceCommands.wakeUp()
+    });
   }
 
 })();
