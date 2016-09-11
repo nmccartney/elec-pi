@@ -1,0 +1,58 @@
+// colors;
+// http://www.color-hex.com/ - if you need to come up with a name for a color;
+
+// font sizes;
+
+// breakpoint variables;
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+// the smallest breakpoint size does not have a min-width;
+$breakpoint-xs: (min-width: $screen-xs); // phone        | very small screen;
+$breakpoint-sm: (min-width: $screen-sm); // tablet       | small screen;
+$breakpoint-md: (min-width: $screen-md); // desktop      | medium screen;
+$breakpoint-lg: (min-width: $screen-lg); // wide desktop | large screen;
+
+
+
+//colors
+$black: #4a4b4b;
+$gray : #ebebeb;
+$white: #FFF;
+
+$orange : #fdb516;
+$orange-lt : lighten($orange,20%);
+$orange-dk : #d59501;
+$orange-dk : #e8851e;
+
+$blue : #066aa2;
+$blue-lt : #00a7e3;
+$blue-lt-lt: #99e7f8;
+$blue-dk : #10547B;
+
+$brand-primary:         $orange !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$content-blue-bg: #E5F6FC;
+
+
+.white{  color: $white;  }
+.gray{  color: $gray;  }
+.gray-bg{  background-color: $gray;  }
+.blue{  color: $blue;  }
+.blue-bg{  background-color: $blue;  }
+.blue-lt{  color: $blue-lt;  }
+.blue-lt-bg{  background-color: $blue-lt;  }
+.blue-lt-lt-bg{  background-color: #e5f6fc;  }
+.gray{  color: $gray;  }
+.gray-bg{  background-color: $gray;  }
+.gray{  color: $gray;  }
+.gray-bg{  background-color: $gray;  }
+
+//define default margin / padding derived from bootstrap
+$default-margin-padding: $grid-gutter-width;

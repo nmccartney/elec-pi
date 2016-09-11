@@ -1,0 +1,139 @@
+// change bootstap clearfix (it uses overflow which causes problems in older browsers);
+@mixin clearfix () {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+@mixin transition($time:400ms, $type : all) {
+    -webkit-transition: $type $time ease-out;
+    -moz-transition: $type  ease-out;
+    -ms-transition: $type $time ease-out;
+    -o-transition: $type $time ease-out;
+    transition: $type $time ease-out;
+}
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin delay($delay){
+    -webkit-transition-delay: $delay; /* Safari */
+    transition-delay: $delay;
+}
+
+
+
+/***********************
+** FONTS - MIXINS
+**********************/
+
+
+$lineheight-multiplier: 1.4;
+$default-lineheight: -1;
+// Must be the px font-size on your html element for proper rem calculation.
+$base-font-size: 10px;
+$base-font: arial, sans-serif;
+
+/**
+ * Just specify font-size, don't override current font.
+ */
+@mixin font-size($fontsize, $lineheight: $default-lineheight, $base: $base-font-size) {
+    @if ($fontsize != 'auto') {
+        $lineheight: _normalize_lineheight($fontsize, $lineheight);
+
+        font-size: $fontsize;
+        font-size: #{$fontsize/$base}rem;
+        line-height: $lineheight;
+        line-height: #{$lineheight/$base}rem;
+    }
+}
+
+/**
+ * The "normal" weight font, usually weight 400
+ */
+@mixin font-normal($fontsize, $lineheight: $default-lineheight) {
+    @include _font_setup('Open Sans', $fontsize, $lineheight);
+    font-weight: normal;
+}
+
+
+
+@mixin font-light($fontsize, $lineheight: $default-lineheight) {
+    @include _font_setup('Open Sans', $fontsize, $lineheight);
+    font-weight: 300;
+}
+
+@mixin font-semi($fontsize, $lineheight: $default-lineheight) {
+    @include _font_setup('Open Sans', $fontsize, $lineheight);
+    font-weight: 600;
+}
+
+/**
+ * The "bold" weight font, usually weight 700
+ */
+@mixin font-bold($fontsize, $lineheight: $default-lineheight) {
+    @include _font_setup('Open Sans', $fontsize, $lineheight);
+    font-weight: 700;
+}
+
+/**
+ * The "extra" weight font, usually weight 700
+ */
+@mixin font-extra($fontsize, $lineheight: $default-lineheight) {
+    @include _font_setup('Open Sans', $fontsize, $lineheight);
+    font-weight: 800;
+}
+
+/**
+ * Helper function to normalize the line-height. Provides an easy way to
+ * handle 'auto' and unspecified lineheight values.
+ */
+@function _normalize_lineheight($fontsize, $lineheight) {
+    // if $fontsize is 'auto', we won't be outputting a font-size or line-height
+    // so it doesn't matter what it is.
+    @if ($fontsize == 'auto') {
+        @return 0;
+    }
+    @if ($lineheight == $default-lineheight) {
+        @return $fontsize * $lineheight-multiplier;
+    }
+    @return $lineheight;
+}
+
+/**
+ * Primary helper to get the font bits output correctly
+ */
+@mixin _font_setup($font, $fontsize, $lineheight, $font-fallback: $base-font) {
+    $lineheight: _normalize_lineheight($fontsize, $lineheight);
+    @include _font_family($font, $font-fallback);
+
+    // Sometimes you just want the font-family, not the font-size
+    @if ($fontsize != 'auto') {
+        @include font-size($fontsize, $lineheight);
+    }
+}
+
+@mixin _font_family($font, $font-fallback) {
+    @if ($font == 'base') {
+        font-family: $base-font;
+    } @else {
+        font-family: $font, $font-fallback;
+    }
+}
+
+//
+//
+
+

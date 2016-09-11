@@ -1,0 +1,60 @@
+// import custom fonts;
+
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot');
+    src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+@import url("//fonts.googleapis.com/css?&family=Open%20Sans:300italic,400italic,700italic,300,400,700);");
+
+
+h1,.h1{
+    @include _font_family("Open Sans",'arial');
+    @include font-light(40px);
+//    -webkit-font-smoothing: antialiased;
+}
+
+h2,.h2{
+    @include _font_family("Open Sans",'arial');
+    @include font-light(35px);
+//    -webkit-font-smoothing: antialiased;
+}
+
+h3,.h3{
+    @include _font_family("Open Sans",'arial');
+    @include font-light(27px);
+//    -webkit-font-smoothing: antialiased;
+}
+
+
+h4,.h4{
+    @include _font_family("Open Sans",'arial');
+    @include font-light(22px);
+//    -webkit-font-smoothing: antialiased;
+}
+
+h5,.h5{
+    @include _font_family("Open Sans",'arial');
+    @include font-normal(16px);
+}
+
+h6,.h6{
+    @include _font_family("Open Sans",'arial');
+    @include font-normal(14px);
+}
+
+p{
+//    -webkit-font-smoothing: antialiased;
+}
+
+.font-weight-normal {
+    font-weight: 300;
+}
+.font-weight-semibold {
+    font-weight: 400;
+}
+.font-weight-bold {
+    font-weight: 700;
+}

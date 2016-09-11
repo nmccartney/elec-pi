@@ -38,6 +38,9 @@ gulp.task('watch',function(){
   gulp.watch('main.js', electron.restart);
   // Reload renderer process
   gulp.watch(['index.html'], electron.reload);
+
+  gulp.watch(['./styles/main.css'], electron.reload);
+  //
 });
 
 /**
@@ -74,8 +77,7 @@ gulp.task('scss:dist',function(){
             this.emit("end", new gutil.PluginError('scss:dist', err, { showStack: true }));
         }))
         .pipe(size())
-        .pipe(gulp.dest('./styles'))
-        // .pipe(browserSync.reload({stream:true}));
+        .pipe(gulp.dest('./styles'));
 });
 
 

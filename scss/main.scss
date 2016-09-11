@@ -1,6 +1,14 @@
 @import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "../node_modules/angular-material/modules/scss/angular-material";
+
+
+
+@import "./variables"; // sitewide variables;
+@import "./mixins";    // sitewide mixins;
+@import "./fonts";     // custom fonts;
+@import "./base";      // base styles;
 
 body{
-	color:black;
+	color:$black;
 }
