@@ -36,6 +36,7 @@
 	    return deferred.promise;
     }
 
+    VoiceCommandBase.captions = []
     
 
     /**
@@ -64,8 +65,13 @@
 		function say(msg, callback) {
 		    console.log('Pause annyang');
 		    console.log('Saying: ' + msg);
+
 		    VoiceCommandBase.lastSentence=msg;
+
 		    annyang.abort();
+
+		    VoiceCommandBase.captions.push({"message":msg,"time":new Date()});
+
 		    responsiveVoice.speak(msg, VoiceConfig.voiceSpeakingLanguage, {
 		        onend: function () {
 		            console.log('Resume annyang');

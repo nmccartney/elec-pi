@@ -37,7 +37,9 @@ gulp.task('watch',function(){
   // Restart browser process
   gulp.watch('main.js', electron.restart);
   // Reload renderer process
-  gulp.watch(['index.html','./js/**/*.js'], electron.reload);
+  gulp.watch(['index.html','./templates/**/*.html'], electron.reload);
+
+  gulp.watch(['./js/**/*.js'], electron.reload);
 
   gulp.watch(['./styles/main.css'], electron.reload);
   //

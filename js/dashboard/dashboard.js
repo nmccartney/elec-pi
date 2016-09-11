@@ -11,7 +11,8 @@
   angular
     .module('dashboard', [
       'ui.router',
-      'voice'
+      'voice',
+      'chart.js'
     ]);
 
   angular
@@ -22,10 +23,13 @@
     $stateProvider
       .state('dashboard', {
         url: '/',
-        // templateUrl: 'home/home.tpl.html',
-        template:"dashboard",
+        templateUrl: './templates/dashboard.html',
+        // template:"dashboard",
         controller: 'DashboardCtrl as dashboard'
       });
+
+
+    // ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
   }
 
 })();
