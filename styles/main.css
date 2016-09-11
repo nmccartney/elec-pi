@@ -25752,3 +25752,37 @@ p {
 
 body {
   color: #4a4b4b; }
+
+#panel-3 {
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all ease-out;
+  -ms-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%); }
+  #panel-3.left {
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all ease-out;
+    -ms-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    -moz-transform: translateX(-220%);
+    -o-transform: translateX(-220%);
+    -ms-transform: translateX(-220%);
+    -webkit-transform: translateX(-220%);
+    transform: translateX(-220%); }
+  #panel-3.middle {
+    -webkit-transition: all 400ms ease-out;
+    -moz-transition: all ease-out;
+    -ms-transition: all 400ms ease-out;
+    -o-transition: all 400ms ease-out;
+    transition: all 400ms ease-out;
+    -moz-transform: translateX(-110%);
+    -o-transform: translateX(-110%);
+    -ms-transform: translateX(-110%);
+    -webkit-transform: translateX(-110%);
+    transform: translateX(-110%); }

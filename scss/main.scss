@@ -12,3 +12,18 @@
 body{
 	color:$black;
 }
+
+
+#panel-3{
+	@include transition(400ms,all);
+  @include transform(translateX(0%));
+	
+	&.left{
+		@include transition(400ms,all);
+    @include transform(translateX(-220%));
+	}
+	&.middle{
+		@include transition(400ms,all);
+    @include transform(translateX(-110%));
+	}
+}

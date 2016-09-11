@@ -8,6 +8,8 @@ html
 		
 		script(type='text/javascript' src='config.js')
 
+		script(type="text/javascript" src="./node_modules/jquery/dist/jquery.js")
+
 		script(type="text/javascript" src="./node_modules/angular/angular.js")
 		script(type="text/javascript" src="./node_modules/angular-ui-router/release/angular-ui-router.js")
 		script(type="text/javascript" src="./node_modules/angular-aria/angular-aria.js")
@@ -23,10 +25,27 @@ html
 			| require('electron-connect').client.create()
 
 	body(ng-app="elecPi")
+
 		.container
 			.row
 				.col-xs-12
 					h1.title="This is Electron on Pi.."
+			.row
+				.col-xs-4
+					.btn.btn-primary.btn-block#btn-panel-1
+						| View
+				.col-xs-4
+					.btn.btn-primary.btn-block#btn-panel-2
+						| View
+				.col-xs-4
+					.btn.btn-primary.btn-block#btn-panel-3
+						| View
+					.panel.panel-default.marg-t-20#panel-3
+						.panel-body
+							| Panel 3
+
+		hr
+
 		.container
 			.row
 				.col-xs-12
